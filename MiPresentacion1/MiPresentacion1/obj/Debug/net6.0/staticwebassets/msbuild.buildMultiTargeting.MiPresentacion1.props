@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MiPresentacion1.props" />
+</Project>

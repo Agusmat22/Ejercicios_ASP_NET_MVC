@@ -1,0 +1,16 @@
+﻿@model List<Cartel>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!--ANUNCIOS CAROUSEL-->
+<partial name="_Anuncios">
+
+
+<partial name="_AgregadosRecientemente" model=@Model>
+
+<partial name="_Series" model=@Model>
+
+
+

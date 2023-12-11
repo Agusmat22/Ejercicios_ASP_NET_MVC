@@ -1,0 +1,30 @@
+﻿@model List<Cartel>
+
+@if(this.ViewBag.TituloCartelera is not null)
+{
+    <div class="text-center mt-5 pb-1">
+
+
+        <h2 class="ext-white fw-normal" style="font-family:'Lucida Bright'; color:#ACB9BB">@this.ViewBag.TituloCartelera</h2>
+
+
+
+    </div>
+
+    <div class="container" style=" background-color:#111111; padding:4rem 3rem 1rem 3rem; margin-top:2rem; border-radius:1rem">
+
+
+        <partial name="_Cartelera" model=@Model>
+        
+        @if(this.ViewBag.FechaExposicion is not null)
+        {
+            <div class="text-center mt-5">
+                <!--ME FALTA REDIRIGIR EL BOTON A PELICULAS CON ASP-CONTROLLER Y ACTION -->
+                <a asp-controller="Home" asp-action="Peliculas" class="btn fw-bold" type="submit" style="background-color:black; color:white; padding:0.5rem;">Ver todas las peliculas</a>
+            </div>
+
+        }
+            
+    </div>
+    
+}

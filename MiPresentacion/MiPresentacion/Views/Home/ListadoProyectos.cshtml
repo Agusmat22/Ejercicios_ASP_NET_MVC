@@ -1,0 +1,30 @@
+﻿@model IEnumerable<ProyectoDTO>
+
+@if (Model is not null)
+{
+    <!--  row-cols-1 indica la cantiad de columnas que ocupara cada una.
+          row-cols-md-3 indica que va ocupar 3 columnas cuando el tamaño de la pantalla sea mayor a la medida MD
+    -->
+    <div class="row row-cols-1 row-cols-md-3 g4 justify-content-center px-5">
+
+        @foreach (ProyectoDTO proyecto in Model)
+        {
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!--CON EL MAX-HEIGHT INDICO EL MAXIMO DE ALTURA SIN PERDER LA CALIDAD POR EL IMG-FLUID -->
+                    <img class="card-img-top img-fluid" src=@proyecto.ImagenURL alt="foto_amazon" style="max-height:250px" />
+                    <div class="card-body">
+                        <h5 class="card-title">@proyecto.Titulo</h5>
+                        <p class="card-text">@proyecto.Descripcion</p>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn btn-primary" href=@proyecto.Link target="_blank" rel="noopener noreferrer">Ver mas informacion</a>
+                    </div>
+                </div>
+
+            </div>
+        }
+
+    </div>
+
+}

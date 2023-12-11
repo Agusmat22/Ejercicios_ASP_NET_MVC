@@ -1,0 +1,68 @@
+﻿
+/*----------------------------------- MI PERFIL -----------------------------------*/
+
+
+/*FOTO DE PERFIL PRIMERA VISTA COMPARTIDA*/
+#foto_perfil {
+    width: 18rem;
+    border-radius: 10rem;
+}
+
+.mi_perfil, .contenedor_mi_perfil {
+    min-height: 38rem;
+}
+
+
+
+@media (max-width:576px)
+{
+    /*FOTO DE PERFIL PRIMERA VISTA COMPARTIDA*/
+
+    #foto_perfil {
+        width: 17rem;
+    }
+
+    .mi_perfil, .contenedor_mi_perfil {
+        min-height: 34rem;
+    }
+
+}
+
+
+@media (min-width:1200px) {
+    /*FOTO DE PERFIL PRIMERA VISTA COMPARTIDA*/
+
+    #foto_perfil {
+        margin-top: 6rem;
+    }
+}
+
+/* DATO: Agregar siempre min-height, para que no afecte el resto de los div    */
+
+/*---------------------------- PRESENTACION, QUIEN SOY --------------------------*/
+
+
+.presentacion, .presentacion2 {
+    min-height: 38rem;
+}
+.presentacion2 {
+    padding-right:10rem;
+    padding-left:10rem;
+}
+
+.presentacion2 p {
+    font-size: 1.20rem;
+    line-height: 1.90rem; /*SEPARA O ACHICA EL ESPACIO ENTRE LETRAS*/
+    font-family: sans-serif; /*CAMBIO EL TIPO DE LETRA*/
+}
+
+@media (max-width:576px) {
+
+    .presentacion, .presentacion2 {
+        min-height: 34rem;
+    }
+}
+
+
+
+

@@ -1,0 +1,61 @@
+﻿#fotoPerfil {
+    width: 220px;
+    border-radius: 50%; /*REDONDEA UN ELEMENTO EN ESTE CASO LA IMAGEN*/
+    margin: 2rem 0;
+    
+}
+
+
+
+.mi-perfil{
+    background-color:ghostwhite;
+    margin: 0;
+}
+
+.seccion-miPerfil {
+    width: 90rem;
+}
+.seccion-miPerfil h1{
+    font-size: 4rem;
+    margin-bottom: 3rem;
+}
+
+
+#img-donet{
+    width: 25rem;
+    margin: 3rem 0 3rem 0;
+}
+
+.seccion-bienvenida {
+    margin: 8rem 0 14rem 0;
+    color: white;
+}
+
+.seccion-bienvenida h1{
+    font-size: 2.50rem;
+    margin: 0 0 3rem 0;
+}
+
+.seccion-bienvenida p {
+    font-size: 1.25rem;
+    line-height: 1.80rem; /*SEPARA O ACHICA EL ESPACIO ENTRE LETRAS*/
+    font-family: sans-serif; /*CAMBIO EL TIPO DE LETRA*/
+}
+
+.cabecera{
+    font-weight:bold; /*ES MAS GORDITA LA LETRA*/
+
+}
+
+.habilidades ul{
+    padding-left: 0;
+    list-style: none; /*LE QUITA LOS PUNTITOS A LOS UL*/
+}
+
+/*ICONOS DE ESPECILIADES BACKEND Y FRONTEND*/
+
+.habilidades i {  /*LOS ICONOS DE BOOTSTRAP SE TRATAN COMO TEXTO*/
+    font-size: 3rem;
+    color: dodgerblue;
+
+}

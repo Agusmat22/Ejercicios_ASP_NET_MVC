@@ -1,0 +1,10 @@
+﻿@using MiPresentacion1.Models.Servicios
+
+@model IEnumerable<Proyecto>
+
+<div class="text-center" style="margin: 8rem 0 0 0">
+    <h3>Mis trabajos recientes</h3>
+    <p>Aqui pueden visualizar algunos de ellos</p>
+</div>
+
+<partial name="_Proyectos" model=@Model>

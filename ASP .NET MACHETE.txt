@@ -1,0 +1,407 @@
+*DATOS:
+
+Los archivos static van en el "wwwroot" --> static son los css,js,imagenes,iconos etc
+
+
+------------------------------------------------ CONTROLADORES ------------------------------------------------
+
+-Son las clases las cuales van a recibir las peticiones http del usuario (en la web) y este dara una respuesta.
+
+-Un controlador contiene una o mas acciones y esta se veran dentro de la clase "IActionResult" --> Sera el tipo del metodo.
+
+-Las acciones son los metodod IActionResult que se ejecutaran en respuesta a las peticiones http de nuestros clientes.
+
+-Podemos tener varios controladores diferentes que se encargaran de una sola cosa especifica, ejemplo un controlador
+de facturas, otro de usuarios, etc.
+
+
+
+
+
+------------------------------------------------------ VISTA ------------------------------------------------------------------
+
+LA VISTA SIEMPRE SE VA ENCONTRAR EN LA CARPETA CON EL NOMBRE PRINCIPAL DEL CONTROLADOR Y EL METODO INDEX
+
+Ejemplo si nuetro controlador de Llama HomeController  --> Debera haber una carpeta llamada "Views" --> Home --> Index.cshtml
+
+Ahora si dentro de nuestro controlador le sacamos ese index va romper ya que buscara con ese nombre y no lo encontrara.
+Pero si dentro del metodo de " IActionResult Index() "en el return view("ingresamos el nombre del index nuevo que desaeamos")
+
+
+----------------------------------------------------LAYAOUT (MENU SUPERIOR DE LA WEB)-------------------------------------------
+
+-En la carpeta shared encontremos los elementos compartidos, y ahi se pueden encontrar indexs.
+
+-El menu de la parte superior de la web, se encuentra dentro de la carpeta "view"-->"shared"--> _Layout.cshtml
+
+-"RenderBody" es donde se renderiza el contenido de la vista
+
+- _ViewStart es el encargado de configurar la vista
+
+
+----------------------------------------------------RUTEO---------------------------------------------------------------------
+
+-Es el que define que ruta se relaciona con que accion
+
+-El ruteo se configura en la clase "Program.cs"
+
+-Dentro del la clase Program.cs en el metodo "app.MapControllerRoute" se asignara el patron de controlador e index por defecto
+Ejemplo:
+
+app.MapControllerRoute(
+	name: "default",
+	pattern: "{controller=Home}/{action=Index}/{Id?}");
+)
+
+-Ese ejemplo ira al Controlador Home --> Ejecutara el metodo IActionResult Index() y mostrara la vista
+
+-El Id? nos permitira obtener la informacion de un registro en particular
+
+
+
+---------------------------------------------------CSS------------------------------------------------------------------------
+
+- CREAR ARCHIVO CSS--> wwwroot -->css -->new item --->mostrar todos la plantilla --> crear css
+
+- REFERENCIA EL CSS AL CSHTML:
+
+--> Views  -->Shared  --> _Layout.cshtml
+
+dentro del layout nos dirigimos al <Head> y abajo del ultimo Link agregamos los siguiente
+   
+   //asp-append-version="true" --> Permite hacer modificacion al css y que se vea reflejado en la web, en conclusion
+   //el cliente podra ver los cambios que se realicen en tiempo real y no se quedara con la version desactualizada
+   //dentro de esta se guarda un string con el nombre del css, en caso de haber algun cambio, automaticamente el string cambia
+
+    <link rel="stylesheet" href="~/css/miArchivoCss" asp-append-version="true" />
+
+
+
+
+--------------------------ENVIAR INFORMACION DEL CONTROLAADOR Y VERLA REFLEJADA EN LA VISTA  (ViewBag) -------------------------------
+
+ViewBag --> "ES DEL TIPO DYNAMIC"
+
+- Sirve solamente para pasar informacion a la vista donde se va ejecutar.
+- Las variable creadas dentro del metodo IAction son locales, por ende si tenemos otro metodo IAction se podra
+crear una variable de ViewBag con el mismo nombre
+
+----------------------------------
+
+Crear variables:
+(Despues del . podemos poner cualquier nombre porque se estaria creando la variable si no existe)
+
+ViewBag.Nombre = "Soy marteeen";
+
+Mostrar variables dentro del HTML:
+
+dentro del texto a escribir ejemplo h1 debemos colocar la @ para invocar el codigo de c#
+
+<!--AGREGO VARIABLE CREADA EN MI CONTROLADOR HOME DENTRO DEL METODO INDEX()-->
+
+<h1 class="display-4">Soy @ViewBag.Nombre</h1>
+
+
+--------------------------------ENVIAR INFORMACION DEL CONTRALADOR MEDIANTE UN MODELO Y REFLEJADO EN LA VISTA (Model)---------------------------
+
+- 1) Instanciamos nuestra clase modelo en el metodo IActionResult de la vista que deseamos
+- 2) El objeto lo pasamos por parametros del return View(acaPasamosObjeto)
+
+Mostrar informacion del controlador en la vista:
+
+-En el Index.cshtml de nuestra vista agregamos --> @model TipoDeClase --> EJEMPLO --> @model Persona
+
+dentro de los elementos de html ejemplo h1, de esta manera invocamos el contenido
+
+//Persona contiene propiedad Nombre
+
+<h1 class="display-4">Soy @Model.Nombre</h1>
+
+Explicacion:
+
+@model --> va sin mayuscula cuando indicamos EL TIPO DEL MODELO, esa sera la unica funcionalidad.
+
+@Model --> Sera el objeto que se paso por parametro en el View, podra ser accedido como tal/
+
+
+-------------------------------------------------------- RAZOR ----------------------------------------------------------------
+
+- @ --> Se conoce como sintaxis de razor el colocar un arroba para poder escribir codigo c#.
+
+ESCRIBIR CODIGO C# DENTRO DE HTML:
+
+@{
+	//ACA PODEMOS USAR CODIGO C# DE VARIAS LINEAS
+}
+
+ESCRIBIR ESTRUCTURAS DE CONTROL DENTRO DE HTML:
+
+@if(Model.edad >= 18)
+{
+	<h4>Eres mayor</h4>
+
+}
+else
+{
+	<h4>Eres menor</h4>
+}
+
+
+-------------------------------------------------
+
+
+@foreach(var nombre in nombres)
+{
+	<li>@nombre</li>
+}
+
+
+
+-----------------------------------------------------	
+
+
+------------------------------------------------------------ VISTAS PARCIALES -------------------------------------------------
+
+Nos permite organizar el codigo y no tener todo el contenido en un solo index
+
+
+Nos sirve para organizar nuestro codigo de forma ordenada y unica. 
+Ejemplo en una misma vista podemos tener varias vistas parciales
+
+Esto quiere decir que seran varios HTML llamados a uno solo para ejecutarlos. (Hace de cuenta que son formularios)
+
+*Por conversion a los elementos compartidos cuando creamos el .cshtml debe ir primero el '_' seguido de la primera letra MAYUS
+
+1)Creamos los .cshtml en la carpeta donde esta el index que deseamos. 
+
+!!IMPORTANTE:
+En caso que queremos usar nuevo .csHtml compartido en cualquier lugar, debemos crearlo en la carpeta Views --> Shared
+
+2)Lo nombramos con _ y primera letra mayuscula
+3)Llamar el .cshtml al index que deseamos:
+
+<partial name="_NombreDelCsHtml"/>
+
+y listo
+
+
+--------------------------------------------------- LISTADO DE PROYECTOS (USANDO CONTROLADORES)--------------------------------
+
+Este es un ejemplo de como usar un modelo y un controlador para mostrar luego en la vista
+
+1)Creamos la clase (se usa el sufijo DTO luego del nombre) => Data Transfer Object o se usa ViewModel
+Como uno quiera pero esta bueno saberlo.
+
+
+
+----------------------------------- CREAR UNA CARTA CON CONTROLADORES Y MODELOS ---------------------
+
+
+<!--  row-cols-1 indica la cantiad de columnas que ocupara cada una.
+      row-cols-md-3 indica que va ocupar 3 columnas cuando el tamaño de la pantalla sea mayor a la medida MD
+-->
+<div class="row row-cols-1 row-cols-md-3 g4 justify-content-center">
+
+    @foreach (ProyectoDTO proyecto in Model.Proyectos)
+    {
+        <div class="col mb-5">
+            <div class="card h-100">
+                <!--CON EL MAX-HEIGHT INDICO EL MAXIMO DE ALTURA SIN PERDER LA CALIDAD POR EL IMG-FLUID -->
+                <img class="card-img-top img-fluid" src=@proyecto.ImagenURL alt="foto_amazon" style="max-height:250px"/>
+                <div class="card-body">
+                    <h5 class="card-title">@proyecto.Titulo</h5>
+                    <p class="card-text">@proyecto.Descripcion</p>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-primary" href=@proyecto.Link target="_blank" rel="noopener noreferrer">Ver mas informacion</a>
+                </div>
+            </div>
+
+        </div>
+    }
+    
+</div>
+
+
+
+----------------------------------------- CREAR VISTAS PARCIALES QUE RECIBEN PARAMETROS --------------------------------------
+
+
+MEDIANTE EL model=""  --> LE PASAMOS LA VARIABLE DE NUESTRO CONTROLADOR
+
+<partial name="_Proyectos" model="@Model.Proyectos"/> 
+
+Y DEL LADO DEL INDEX DEBEMOS PONERL EL TIPO DE DATO QUE VA RECIBIR, PARA QUE SEA FUERTEMENTE TIPADO
+
+ejemplo:
+
+@model IEnumerable<ProyectoDTO>
+
+
+ <div class="text-center" style="margin: 5rem 0 5rem 0">
+     <h1>Mis trabajos recientes</h1>
+     <p>Aqui se pueden visualizar los trabajos realizados recientemente</p>
+ </div>
+
+
+--------------------------------------------- INYECCION DE DEPENDENCIAS ------------------------------------------------------
+
+Las inyecciones de dependencias lo que haces es delegar la instanciacion de las dependencias de nuestras clases a otras clases.
+
+Osea LOS CONSTRUCTORES son inyeccion de dependencia, ya que recibimos por parametro los atributos
+
+1)Ir al program.cs y agregar lo siguiente:
+
+builder.Services.AddTransient<NombreDeLaClaseQueCreamos>();
+
+2)Agregar un parametro al constructor que sera el de la clase que creamos, entonces ahora se va instanciar siempre
+la clase que creamos por si sola. y luego la manipulamos como deseamos.
+
+
+
+-------------------------------------------INYECCION DE DEPENDENCIA CON INTERFACES --------------------------------------------
+
+Esta manera es mas optima ya que aplicamos el principio de inversion de dependencia donde nuestras clases no depende de otras 
+clase sino que depende de cosas mas abstractas como INTERFACES.
+
+1)El procedimiento es igual a la inyeccion de dependecia solo cambia una cosa. Debemos agregar lo siguiente al program.cs
+
+builder.Services.AddTransient<ISalud,CentroMedico>();
+
+
+- ISalud: Sera una interfaz que creamos donde le diremos al controlador que recibira ese tipo de datos. 
+- CentroMedico: Sera una clase que creamos donde y se implementan los metodos de la interfaz ISalud.
+
+CONCLUSION: El controlador va entender que va recibir un tipo de dato ISalud y que lo recibira de la clase CentroMedico.
+
+--------------------------------------------------- SERVICIOS -------------------------------------------------------
+
+Los servicios son aquellas clases registradas que tenemos en la inyeccion de dependencias, osea los parametros
+recibidos por el constructor. Ese es un ejemplo de un servicio.
+
+No todos los servicios son iguales, pueden varias el tiempo de vida de cada uno. 
+
+Hay tres tipos de servicios:
+
+- Transient --> Son los servicios que viven menos tiempo, El servicio cada vez que se hace una solicitud http.
+Siempre usara una instancia distinta del servicio aunque este en la misma peticion HTTP
+
+builder.service.AddTransient<>
+
+
+- Scoped --> Cuyo tiempo de vida queda limitado al tiempo una peticion http, Por cada solicitud http se instanciara
+un servicio pero si se utiliza el scoped varias veces dentro de una misma peticion este usara la misma instancia
+
+builder.service.AddScoped<>
+
+
+- Singleton --> El servicio que vive mas tiempo, el servicio se instancia una unica vez, luego en sus siguientes
+peticion http brinda el servicio instanciado.
+
+builder.service.AddSingleton<>
+
+-----------------------------------------------  ILOGER -------------------------------------------------------------------
+
+EL ILoger es una intefaz donde se comunica nuestra aplicacion en tiempo real mediante la consola,
+si queremos escribir en dicha consola para testear metodos, logica etc. debemos ingresar el siguiente metodo
+
+_logger --> sera el objeto instanciado de la Interfaz
+
+_logger.LogInformation("Aca escribo el mensaje y se mostrara en consola");
+
+
+ILoger recibira entre <> una clase 
+
+6 CATEGORIAS DE MENSAJES:
+No todos tienen el mismo nivel de prioridad
+
+- CRITICAL
+- ERROR
+- WARNING
+- INFORMATION
+- DEBUG
+- TRACE
+
+Nosotros configuramos a partir de que categoria es la de menor nivel hasta el maximo
+
+CONFIGURACION DE PRIORIDAD:
+
+Por defecto se configura en el appsettings.json --> appsettings.Development.json
+
+en la clave "Default:" --> ira el mensaje con menor prioridad
+
+en la clave "MicroSoft.AspNetCore:" --> ira el mensaje y mostrara ese o con mas prioridad
+
+
+---------------------------------------PROVEEDORES DE CONFIGURACION --------------------------------------
+
+Nos permite tener datos de configuracion los cuales podemos utilizar sin necesidad de harcodearlo
+en nuestro codigo fuente.
+
+Para obtener los valor de 'appsettings.Development.json' en nuetro constructor hacemos una
+inyeccion de dependencia de IConfiguration y obtenemos el objeo de configuracion.
+Luego para acceder a cada clave lo hacemos como un diccionario. 
+Ejemplo:
+
+configuration.GetValue<string>("ingresamosLaClaveDelDiccionario")
+
+--------------------------------------- HTTP POST --------------------------------------------------
+
+Post es cuando el usuario nos envia informacion y nuestro controlador debe controlarla y manipularla
+Todos los metodos en un controlador son del tipo GET por defecto, por eso debemos colocar la
+etiqueta arriba del metodo --> [HttpPost]
+
+1) Por ejemplo si queremos hacer un formulario y recibir la informacion debemos hacer lo siguiente:
+
+<form asp-controller="nombreControlador" asp-action="NombreMetodoIAction">
+
+2) luego en cada input le debemos agregar el Name:
+
+name="elMismoNombreQueLasPropiedadesDeLaClaseCreada"
+
+3)Debemos crear una clase que va contener los valor de los inputs, cada propiedad debe
+llamarse igual que los id de los inputs pero con la primera letra mayuscula
+
+4)Hacemos una sobre carga del metodo que nombramos en el punto 1 y Le agregamos el [HttpPost] arriba del metodo 
+
+5)Al metodo le agregamos por parametro la clase creada para recibir los inputs
+
+6)Dentro del metodo el return debe ser un redireccionamiento hacia otro metodo del controlador
+
+
+Explicacion:
+
+asp-controller="nombreControlador" --> Es el nombre del controlador sin agregar el subfijo Controller
+asp-action="NombreMetodoIAction" --> Nombe del metodo que va recibir los datos de los inputs
+
+
+EJEMPLO DE UN FORMULARIO:
+
+<form asp-controller="Home" asp-action="Contacto">
+
+    <div class="" style="margin:8rem 35rem 0 35rem">
+
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input class="form-control" id="nombre" name="nombre" type="text" placeholder="Ingrese su nombre" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input class="form-control" id="email" name="email" type="email" placeholder="Ingrese su correo electronico" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Mensaje</label>
+            <textarea class="form-control" id="mensaje" name="mensaje" type="textarea" placeholder="Escriba su mensaje" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+
+    </div>
+  
+</form>
+
+
+--------------------------------------ENVIAR UN MAIL AUTOMATICO DESDE LA WEB-------------------------------------
+

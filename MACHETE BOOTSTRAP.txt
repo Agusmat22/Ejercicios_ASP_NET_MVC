@@ -1,0 +1,482 @@
+BOOTSTRAPS
+
+-------------------------------- CONTAINER --------------------------------------------------
+
+-CONTAINER:  -->es el encargado de centralizar el div en pantalla !!!
+
+este se encuentra carpeta Shared -> _Layouy.cshtml ->en donde esta @RenderBody
+
+ejemplo: <div class="container">
+
+(Dependiendo la dimension de la pantalla podemos agregar un breakPoint
+para que se ajuste segun la dimension)
+
+ejemplo: <div class="container-sm"> , <div class="container-xl"> , etc
+
+-------------------------------- --------GRID--------------------------------------------------
+
+-GRID:  -->Sistema de filas y columnas  !!!!
+
+columnas se usa la class "col"
+filas se usa la class "row"
+
+podemos cambiar de horizontal a vertical las columnas con un breakpoint,
+osea -sm,-xl, etc
+
+
+Crear una fila con tres columnas ejemplo:
+
+<div class="row">
+    <div class="col">
+        Columna1
+    </div>
+    <div class="col">
+        Columna2
+    </div>
+    <div class="col">
+        Columna3
+    </div>
+</div>
+
+Indicar el ancho de la columnas (maximo hasta 12 columnas)
+
+class="col-4"  -->4 es un numero random puede ser hasta 12
+
+Indicar espacios entre columnas 
+
+class="col-4 offset-2" -->2 es un numero random puede ser hasta 12
+
+Modificar la posicion de todas las columnas:
+
+class="row align-items-la_posicion_que_querramos"
+
+"row align-items-center" --> lo posiciona en el centro
+"row align-items-start" --> lo posiciona en el principio
+"row align-items-end" --> lo posiciona en el final
+
+Modificar la posicion de una columna especifica:
+
+no debemos ingresar ningun valor dentro de ROW sino que dentro de cada columna
+
+class= "col align-self-la_posicion_que_querramos"  -->posicion es igual al item anterior
+
+Agregar pequenios espacios horizontal:
+
+class="row gx-1"  -->x significa el eje carteziano
+
+Agregar pequenios espacios vertical:
+
+class="row gy-1"  -->y significa al eje carteziano
+
+Agregar espacios tanto vertical y horizontal con el mismo tamanio:
+
+class="row g-2" 
+
+----------------------------------------IMAGENES--------------------------------------------------
+
+-Ajustar las imagenes sin distorcionar en una columna:
+
+ <img class="img-fluid" src="https://lonelyplanetes.cdnstatics2.com">
+
+-Agregar un borde cuadrado estetico a una imagen:
+
+<img class="img-thumbnail" src="https://lonelyplanetes.cdnstatics2.com">
+
+-Agregar un borde ovalado a una imagen:
+
+<img class="img-thumbnail rounded-circle" src="https://lonelyplanetes.cdnstatics2.com">
+
+-Varias columanas en horizontal con imagenes del mismo tamanio:
+
+<div class="row align-items-center">
+    <div class="col-4">
+        <img class="img-fluid" src="https://lonelyplanetes.cdnstatics2.com/sites/default/files/styles/mapa_960/public/destination_maps/argentina.jpg?itok=DflcgyDw"></img>
+    </div>
+    <div class="col-4">
+        <img class="img-fluid" src="https://lonelyplanetes.cdnstatics2.com/sites/default/files/styles/mapa_960/public/destination_maps/argentina.jpg?itok=DflcgyDw"></img>
+    </div>
+    <div class="col-4">
+        <img class="img-fluid" src="https://lonelyplanetes.cdnstatics2.com/sites/default/files/styles/mapa_960/public/destination_maps/argentina.jpg?itok=DflcgyDw"></img>
+    </div>
+</div>
+
+-Varias columnas en vertical con imagenes del mismo tamanio y con espacios entre cada imagen:
+//con gy hacemos espacios verticales
+//con sm indicamos que cuando la pantalla sea pequenia las columnas seran verticales
+
+
+<div class="row gy-5  align-items-center">
+    <div class="col-sm-4">
+        <img class="img-fluid" src="https://lonelyplanetes.cdnstatics2.com/sites/default/files/styles/mapa_960/public/destination_maps/argentina.jpg?itok=DflcgyDw"></img>
+    </div>
+    <div class="col-sm-4">
+        <img class="img-fluid" src="https://lonelyplanetes.cdnstatics2.com/sites/default/files/styles/mapa_960/public/destination_maps/argentina.jpg?itok=DflcgyDw"></img>
+    </div>
+    <div class="col-sm-4">
+        <img class="img-fluid" src="https://lonelyplanetes.cdnstatics2.com/sites/default/files/styles/mapa_960/public/destination_maps/argentina.jpg?itok=DflcgyDw"></img>
+    </div>
+</div>
+
+------------------------------------------------COLORES----------------------------------------
+
+-Dentro de cualquier class se coloca "yElColor"
+Ejemplo --> "bg-primary"
+
+TABLA DE COLORES:
+
+bg-primary -->azul
+bg-secondary-->gris
+bg-sucess-->verde musgo
+bg-danger-->rojo
+bg-warning-->amarillo
+bg-info -->celeste
+bg-info -->blanco con un toque de gris
+bg-dark -->negro
+bg-white -->blanco
+
+---------------------------------------------CONSTRUIR UNA TABLA------------------------------
+En el Div Table agregamos la class="table"
+<table class="table">
+
+Ejemplo de una tabla:
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Felipe</td>
+            <td>Gavilan</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Agustin</td>
+            <td>Garcia</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Klopp</td>
+            <td>Mishigan</td>
+        </tr>
+    </tbody>
+
+</table>
+
+-Alternar los colores de las filas uno blanco y otro gris:
+
+class="table table-striped"
+
+-Apoyar el mouse en una fila y que cambie color
+
+class="table table-hover"
+
+------------------------------------VIDEO CON RATIO ------------------------------------------
+
+Cuando agregamos un ratio nos permite que este contenido dentro del ancho de la pantalla,
+y se amolde a medidad de las resoluciones
+
+
+Crear un video sin ratio
+<iframe width="560" height="315" src="url_shared_youtube" title="Youtube video" allowfullscreen>
+
+Crear un video con ratio (ejemplo con una pantalla de 16x9)
+<div class="ratio ratio-16x9">
+   <iframe width="560" height="315" src="url_shared_youtube" title="Youtube video" allowfullscreen>
+</div>   -->ESTO TAMBIEN LO PODEMOS METER DENTRO DE LAS COLUMNAS
+
+------------------------------------DEFINIR TAMAñO DE ELEMENTOS-----------------------------------
+
+ANCHO:
+
+<div class="w-25">  -->ancho del 25%
+<div class="w-50">  -->ancho del 50%
+<div class="w-75">  -->ancho del 75%
+<div class="w-100">  -->ancho del 100%
+<div class="w-auto">  -->ancho automatico
+
+ALTURA:
+
+<div class="h-25">  -->altura del 25%
+<div class="h-50">  -->altura del 50%
+<div class="h-75">  -->altura del 75%
+<div class="h-100">  -->alturadel 100%
+<div class="h-auto">  -->altura automatico
+
+TODA LA PANTALLA:
+
+<div class="vh-100">  -->altura de toda la pantalla
+<div class="vw-100">  -->ancho de toda la pantalla
+
+-----------------------------------------------ESPACIOS Y MARGENES ----------------------------------
+
+MARGENES HACIA AFUERA:
+
+Podemos agregarlos a cualquier elemento, h1, columnas, imagenes etc
+MAXIMO 5 ESPACIOS
+
+
+
+<div class="mt-4"> --> indicamos MARGEN TOP(superior)
+<div class="mb-4"> --> indicamos MARGEN BAJO(inferior)
+<div class="me-4"> --> indicamos MARGEN END(Derecha)
+<div class="ms-2"> --> indicamos MARGEN START(izquierda)
+<div class="my-3"> --> indicamos MARGEN entre la parte superior e inferior de manera vertical
+<div class="mx-3"> --> indicamos MARGEN entre la parte izquierda e derecha de manera horizontal
+
+MARGENES HACIA ADENTRO:
+
+Usaremos padding cuando queremos por ejemplo alejar el contenido que se encuentra dentro de un boton
+
+
+class="p-5" --> hara el padding en los 4 angulos
+class="px-5" --> hara el pading a la DERECHA E IZQUIERDA
+class="py-5" --> hara el pading ARRIBA Y ABAJO
+class="pe-5" --> hara el padding a la DERECHA
+
+---------------------------------------CAMBIAR UBICACION DE TEXTOS-----------------------------------------
+
+<p class="text-start"> --> Texto a la izquierda
+<p class="text-center"> --> Texto en el centro
+<p class="text-end"> --> Texto a la derecha
+
+-Texto responsive, para que dependiendo el tamaño de la pantalla se ubiquen:
+
+<p class="text-sm-center"> --> Texto centralizado en pantalla pequeñas o mas grandes
+<p class="text-md-center"> --> Texto centralizado en pantalla medias o mas grandes
+<p class="text-lg-center"> --> Texto centralizado en pantalla grandes o mas grandes
+<p class="text-xl-end"> --> Texto a la derecha en pantalla extra-grandes o mas grandes
+
+-Texto dentro de su contenedor:
+
+// badge es un tipo de contenedor para texto, se usa en la notificaciones
+// TEXT-WRAP se usa para que el texto no se salga de los limites de su contenedor
+
+
+<div class="badge bg-primary text-wrap" style="width: 6rem;">
+
+-Texto fuera de su contendor y sin espacios:
+
+La solucion es usar TEXT-BREAK, agregara los espacios 
+					y podra que el texto no salga fuera de su contenedor:
+
+
+<div class="badge bg-primary text-wrap text-break" style="width: 6rem;">
+
+TRANSFORMAR EL TEXTO:
+
+<p class="text-lowercase"> --> Texto en minuscula
+<p class="text-uppercase"> --> Texto en mayuscula
+<p class="text-capitalize"> --> La primera palabra en mayuscula
+
+TAMAñO DEL TEXTO:
+
+<p class="fs-1"> --> Tamaño mas chiquito
+<p class="fs-3"> --> Tamaño normal
+<p class="fs-6"> --> Tamaño mas grande
+
+SACARLE A UN ENLACE LA DECORACION:
+
+<a href="#" class="text-decoration-none">
+
+--------------------------------------------FORMULARIOS--------------------------------------
+
+EJEMPLO DE UN FORMULARIO CON CASILLA PARA ESCRIBIR MAIL,UN TEXTAREA Y UN SELECT(COMBOBOX),CHECKBOX
+
+con la palabra reservada DISABLED deshabilitamos un campo
+
+<form>
+
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control"/>       ---> TEXT BOX
+    </div>
+
+
+    <div class="mb-3">
+        <label class="form-label">Descripcion</label>
+        <textarea type="email" class="form-control"></textarea>    ---> RICHTEXTBOX 
+    </div>
+
+
+    <div class="mb-3">    
+        <select class="form-select">
+            <option selected> Color favorito</option>    ---> SELECT (ES UN COMBOBOX)
+            <option value="1"> Rojo</option>
+            <option value="2"> Verde</option>
+            <option value="3"> Azul</option>
+        </select>
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" />    --> CHECKBOX
+        <label class="form-label">Es empleado</label>
+    </div>
+
+</form>
+
+-Crear inputs (textbox) con placeholder sin necesidad de un label:
+
+<div class="row">
+
+    <div class="col">
+        <input type="text" class="form-control" placeholder="Primer Nombre"/>
+    </div>
+
+    <div class="col">
+        <input type="text" class="form-control" placeholder="Segundo Nombre" />
+    </div>
+
+    <div class="col">
+        <button class="btn btn-primary">Enviar</button>
+    </div>
+</div>
+
+--------------------------------------- ACORDEON ----------------------------------------------------
+
+
+<div class="accordion-item" id="ejemploAcordeon">
+    <h2 class="accordion-header">
+
+        <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#elemento1acordeon">Elemento 1</button>
+    </h2>
+    <div id="elemento1acordeon" class="accordion-collapse collapse show" data-bs-parent="#ejemploAcordeon">
+        <div class="accordion-body">
+            Este es el contenido del primer acordeon
+        </div>
+    </div>
+</div>
+
+
+--------------------------------------CAROUSEL DE IMAGENES ------------------------------------------
+
+CREAMOS UN CAROUESEL DE 3 IMAGENES:
+(Dentro del src colocamos el link de la imagen)
+
+
+<div id="coruselEjemplo" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+        <div class="carousel-item active">
+            <img src="" class="d-block w-100"/>
+        </div>
+
+        <div class="carousel-item">
+            <img src="" class="d-block w-100"/>
+        </div>
+
+        <div class="carousel-item">
+            <img src="" class="d-block w-100"/>
+        </div>
+
+    </div>
+</div>
+
+AGREGAR BOTONES PARA SELECCIONAR LA FOTO EN LA PARTE INFERIOR:
+
+
+(el primer boton es el que llevara el active, luego el resto no. el target sera el ID del div principal)
+
+<div class="carousel-indicators">
+    <button type="button" data-bs-target="#coruselEjemplo" data-bs-slide-to="0" class="active"> </button>
+    <button type="button" data-bs-target="#coruselEjemplo" data-bs-slide-to="1"> </button>
+    <button type="button" data-bs-target="#coruselEjemplo" data-bs-slide-to="2"> </button>
+</div>
+
+AGREGAR UN BOTON DEL LADO IZQUIERDO Y OTRO DEL DERECHO PARA CORRER LAS IMAGENES:
+(donde esta el # debe ir el ID principal)
+
+<button class="carousel-control-prev" type="button" data-bs-target="#coruselEjemplo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+</button>
+
+<button class="carousel-control-next" type="button" data-bs-target="#coruselEjemplo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+</button>
+
+------------------------------------------------ TABS -----------------------------------------------------------------
+
+
+<ul class="nav nav-tabs">
+
+    <li class="nav-item">
+        <!--el active va porque sera el primer tab por defecto-->
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab1">
+            Tab 1
+        </button>
+    </li>
+
+    <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab2">
+            Tab 2
+        </button>
+    </li>
+</ul>
+<!--CONTENIDO DENTRO DE CADA TAB-->
+<div class="tab-content">
+    <!--el show active va porque sera el primer tab por defecto-->
+    <div class="tab-pane fade show active" id="tab1">
+        Good morning
+    </div>
+
+    <div class="tab-pane fade" id="tab2">
+        Hasta luego
+    </div>
+</div>
+
+------------------------------------------------------ MENU LATERAL DESPLEGABLE ---------------------------------------------
+
+EL BOTON ES EL ENCARGADO DE ABRIR EL MENU DESPLEGABLE
+
+
+<button type="button" class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#ejemploOffcanvas">
+    Abrir offcanvas
+</button>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="ejemploOffcanvas">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Mi aplicacion</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div>
+            Un texto
+        </div>
+    </div>
+</div>
+
+
+---------------------------------------------------CARTAS -----------------------------------------------------
+
+HACER 1 SOLA CARTA CON IMAGEN, TITULO, TEXTO Y BOTON:
+(el espacio de col-4 es a modo ejemplo, podemos usar la cantidad que deseamos)
+
+
+<div class="row justify-content-center">
+    <div class="col-4">
+        <div class="card h-100">
+
+            <!--CON EL MAX-HEIGHT INDICO EL MAXIMO DE ALTURA SIN PERDER LA CALIDAD POR EL IMG-FLUID -->
+            <img class="card-img-top img-fluid" src="" alt="foto_amazon" style="max-height:250px" />
+            <div class="card-body">
+                <h5 class="card-title">Amazon</h5>
+                <p class="card-text">Es una tienda hermosa para comprar</p>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-primary" href="" target="_blank" rel="noopener noreferrer">Ver mas informacion</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+-----------------------------------------------  -------------------------------------------------
+
+

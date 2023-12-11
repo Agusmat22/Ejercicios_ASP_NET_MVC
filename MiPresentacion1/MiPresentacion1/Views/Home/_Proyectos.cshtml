@@ -1,0 +1,32 @@
+﻿@using MiPresentacion1.Models.Servicios
+
+@model IEnumerable<Proyecto>
+
+@if(Model is not null)
+{
+    <div class="row row-cols-1 row-cols-md-3 row-cols-xl-4 justify-content-center" style="margin: 3rem 0 3rem 0">
+
+        @foreach (Proyecto proyecto in Model)
+        {
+
+            <div class="col">
+
+                <div class="card h-100">
+                    <img class="img-fluid" src=@proyecto.ImagenURL style="max-height:16rem" />
+
+                    <div class="card-body">
+                        <h3>@proyecto.Titulo</h3>
+                        <p>@proyecto.Descripcion</p>
+                    </div>
+
+                    <div class="card-footer">
+                        <a type="sumbit" href=@proyecto.Link class="btn btn-primary" target="_blank">Ver mas informacion</a>
+                    </div>
+
+                </div>
+            </div>
+        }
+    </div>
+    
+}
+

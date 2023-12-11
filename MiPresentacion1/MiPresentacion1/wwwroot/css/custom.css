@@ -1,0 +1,62 @@
+﻿
+/*PRESENTACION*/
+
+
+.presentacion {
+    background-color: #F6F6F6;
+    padding: 2rem 0 4rem 0;
+}
+
+
+
+#foto_perfil {
+
+    width:20rem;
+    border-radius: 10rem;
+    margin-top: 2rem;
+}
+
+/*foto asp .net*/
+
+#foto_asp{
+
+    width:22rem;
+}
+
+.bienvenida {
+    color: white;
+    margin: 8rem 0 14rem 0;
+    padding-top:6rem;
+    padding-bottom:12rem;
+    
+}
+
+.bienvenida h2{
+    margin-top:2rem;
+    margin-bottom:5rem;
+    font-size:2.5rem
+}
+
+.bienvenida p {
+    font-size: 1.25rem;
+    line-height: 1.80rem; /*SEPARA O ACHICA EL ESPACIO ENTRE LETRAS*/
+    font-family: sans-serif; /*CAMBIO EL TIPO DE LETRA*/
+}
+
+
+/*HABILIDADES*/
+
+.columnas_habilidades{
+    background-color:white;
+    padding: 1rem;
+}
+
+.columnas_habilidades ul{
+    
+    list-style: none;
+    margin-right: 2rem
+}
+
+.bi{
+    color:dodgerblue
+}
