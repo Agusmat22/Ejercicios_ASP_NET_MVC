@@ -43,11 +43,11 @@
 
 
 .presentacion, .presentacion2 {
-    min-height: 38rem;
+    min-height: 27rem;
 }
 .presentacion2 {
-    padding-right:10rem;
-    padding-left:10rem;
+    padding-right:5rem;
+    padding-left:5rem;
 }
 
 .presentacion2 p {
@@ -59,9 +59,55 @@
 @media (max-width:576px) {
 
     .presentacion, .presentacion2 {
-        min-height: 34rem;
+        min-height: 40rem;
     }
 }
+
+@media (min-width:991px) {
+
+    .presentacion2 {
+        padding-right: 10rem;
+        padding-left: 10rem;
+    }
+}
+
+/*------------------------------------------------------- PROYECTOS -----------------------------------------------*/
+
+.proyectos, .contenedor-proyectos {
+    min-height: 27rem;
+}
+
+.contenedor-proyectos {
+    padding-right:5rem;
+    padding-left:5rem;
+}
+
+@media (max-width:576px) {
+
+    .proyectos, .contenedor-proyectos {
+        min-height: 40rem;
+    }
+}
+
+@media (min-width:991px) {
+
+    .contenedor-proyectos {
+        padding-right: 10rem;
+        padding-left: 10rem;
+    }
+}
+
+@media (min-width:1400px)
+{
+    .col_proyecto {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+}
+
+
+/*CARTAS DE PROYECTOS*/
+
 
 
 
