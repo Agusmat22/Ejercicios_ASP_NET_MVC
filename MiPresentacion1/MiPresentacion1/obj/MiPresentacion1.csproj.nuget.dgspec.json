@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lisandro\\Desktop\\ASP\\MiPresentacion1\\MiPresentacion1\\MiPresentacion1.csproj": {}
+    "C:\\Users\\Lisandro\\Desktop\\Ejercicios_ASP_NET_MVC\\MiPresentacion1\\MiPresentacion1\\MiPresentacion1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lisandro\\Desktop\\ASP\\MiPresentacion1\\MiPresentacion1\\MiPresentacion1.csproj": {
+    "C:\\Users\\Lisandro\\Desktop\\Ejercicios_ASP_NET_MVC\\MiPresentacion1\\MiPresentacion1\\MiPresentacion1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lisandro\\Desktop\\ASP\\MiPresentacion1\\MiPresentacion1\\MiPresentacion1.csproj",
+        "projectUniqueName": "C:\\Users\\Lisandro\\Desktop\\Ejercicios_ASP_NET_MVC\\MiPresentacion1\\MiPresentacion1\\MiPresentacion1.csproj",
         "projectName": "MiPresentacion1",
-        "projectPath": "C:\\Users\\Lisandro\\Desktop\\ASP\\MiPresentacion1\\MiPresentacion1\\MiPresentacion1.csproj",
+        "projectPath": "C:\\Users\\Lisandro\\Desktop\\Ejercicios_ASP_NET_MVC\\MiPresentacion1\\MiPresentacion1\\MiPresentacion1.csproj",
         "packagesPath": "C:\\Users\\Lisandro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lisandro\\Desktop\\ASP\\MiPresentacion1\\MiPresentacion1\\obj\\",
+        "outputPath": "C:\\Users\\Lisandro\\Desktop\\Ejercicios_ASP_NET_MVC\\MiPresentacion1\\MiPresentacion1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lisandro\\AppData\\Roaming\\NuGet\\NuGet.Config",

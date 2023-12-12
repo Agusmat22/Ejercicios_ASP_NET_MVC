@@ -1,0 +1,32 @@
+﻿@model List<Proyecto>
+
+@if (Model is not null)
+{
+    <div class="proyectos" style="background-color:#0C192C;">
+        <h3 class="text-white text-center fs-1" style="padding-top: 4rem;">Mis Proyectos</h3>
+        <p class="text-white text-center mt-4">Cuento con mas de 150 ejercicios realizados, todos guardados en GITHUB</p>
+
+        <div class="row row-cols-1 g-1  row-cols-lg-3 row-cols-xl-4 justify-content-center text-center " style="padding-top:4rem; padding-bottom:7rem; margin-right:1rem; margin-left:1rem;">
+
+            @foreach (Proyecto proyecto in Model)
+            {
+
+                <div class="col m-4">
+                    <div class="card h-100" style="background-color:#EDEDED">
+                        <img class="img-fluid" src=@proyecto.ImagenURL style="height:14rem" />
+
+                        <div class="card-body">
+                            <h3 style="color:#0C192C;">@proyecto.Titulo</h3>
+                            <p>@proyecto.Tecnologias</p>
+                        </div>
+
+                        <div class="card-footer p-3" style="background-color:#E1E1E1;">
+                            <a type="sumbit" href=@proyecto.RepositorioURL class="btn btn-primary" target="_blank" style="background-color:#0C192C;">Ver repositorio</a>
+                        </div>
+
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}

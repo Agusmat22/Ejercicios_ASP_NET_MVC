@@ -1,7 +1,13 @@
+using WebIntentoPresentacion.Models;
+using WebIntentoPresentacion.Models.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//agrego el metodo al controlador
+builder.Services.AddTransient<IGenerador, GeneradorProyecto>();
 
 var app = builder.Build();
 

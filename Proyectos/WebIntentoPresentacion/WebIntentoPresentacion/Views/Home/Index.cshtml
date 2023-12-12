@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<Proyecto>
+
+@{
     ViewData["Title"] = "Bienvenido a mi portafolio";
 }
 
@@ -8,80 +10,10 @@
 
 <partial name="_QuienSoy" />
 
-<div class="proyectos" style="background-color:aqua; margin-top:3rem;">
+<partial name="_Proyectos" model=@Model/>
 
-    <div class="container contenedor-proyectos">
-        <div class="row g-5 row-cols-1 row-cols-sm-1 row-cols-md-2 justify-content-center align-items-center pb-5 pt-2 ">
 
-            <div class="col col_proyecto">
-                <div class="card h-100">
-                    <div class="card-img">
-                        <img class="img-fluid" src="~/imagenes/skills/calendario-2024-argentina-img.webp" alt="proyectos" />
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Titulo</h3>
-                        <p class="card-text">Descripcion del articulo</p>
-                    </div>
-                    <div class="card-footer">
-                        <a class="btn btn-primary">boton</a>
 
-                    </div>
-                </div>
-            </div>
-
-            <div class="col col_proyecto">
-                <div class="card h-100 ">
-                    <div class="card-img">
-                        <img class="img-fluid"  src="~/imagenes/skills/calendario-2024-argentina-img.webp" alt="proyectos" />
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Titulo</h3>
-                        <p class="card-text">Descripcion del articulo</p>
-                    </div>
-                    <div class="card-footer">
-                        <a class="btn btn-primary">boton</a>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="col col_proyecto">
-                <div class="card h-100">
-                    <div class="card-img">
-                        <img class ="img-fluid" src="~/imagenes/skills/calendario-2024-argentina-img.webp" alt="proyectos" />
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Titulo</h3>
-                        <p class="card-text">Descripcion del articulo</p>
-                    </div>
-                    <div class="card-footer">
-                        <a class="btn btn-primary">boton</a>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="col col_proyecto">
-                <div class="card h-100">
-                    <div class="card-img">
-                        <img class="img-fluid" src="~/imagenes/skills/calendario-2024-argentina-img.webp" alt="proyectos" />
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Titulo</h3>
-                        <p class="card-text">Descripcion del articulo</p>
-                    </div>
-                    <div class="card-footer">
-                        <a class="btn btn-primary">boton</a>
-
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-
-    </div>
-
-</div>
 
     
 
