@@ -3,6 +3,8 @@
 
 
 /*FOTO DE PERFIL PRIMERA VISTA COMPARTIDA*/
+
+
 #foto_perfil {
     width: 18rem;
     border-radius: 10rem;
@@ -28,6 +30,19 @@
 
 }
 
+@media (max-width:1200px) {
+    /*FOTO DE PERFIL PRIMERA VISTA COMPARTIDA*/
+
+    .iconos_perfil{
+        padding-bottom:4rem;
+    }
+
+    .contenedor_mi_perfil {
+        padding-top: 2rem;
+    }
+
+}
+
 
 @media (min-width:1200px) {
     /*FOTO DE PERFIL PRIMERA VISTA COMPARTIDA*/
@@ -35,6 +50,12 @@
     #foto_perfil {
         margin-top: 6rem;
     }
+
+    .contenedor_nombre_icono {
+        margin-top: 3rem;
+    }
+
+
 }
 
 /* DATO: Agregar siempre min-height, para que no afecte el resto de los div    */
@@ -141,7 +162,13 @@
     width: 29rem;
 }
 
-/*CARTAS DE PROYECTOS*/
+/*------------------------------------------------------BARRA  DE NAVEGACION-----------------------------------------*/
+
+.barra_navegacion a{
+    padding:0.6rem;
+}
+
+
 
 
 

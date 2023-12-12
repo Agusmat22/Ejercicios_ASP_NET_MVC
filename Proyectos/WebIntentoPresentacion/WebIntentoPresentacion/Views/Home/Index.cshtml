@@ -13,7 +13,90 @@
 <partial name="_Proyectos" model=@Model/>
 
 
+<div class="presentacion pb-5" id="presentacion" style="background:#EDEDED;">
+    <div class="container presentacion2">
+
+        <h3 class=" fw-bold fs-2 text-center mb-5" style="color:#0C192C; padding-top:5rem;">Experiencia laboral</h3>
+
+        <div class="pt-4 mb-5">
+            
+            <h4 class="fs-4 ">Facturacion | Grupo Roisa - Doctored</h4>
+            <h5 style="font-size:1.2rem;">Marzo 2023 - Actual.</h5>
+            <h5 style="font-size:1rem;">Prepaga de salud.</h5>
+            <p style="font-size:0.9rem;">Sistema de gestion: PRESMED</p>
+            <p style="font-size:0.9rem;">Tareas realizadas:</p>
+
+            <ul>
+                <li>Facturacion.</li>
+                <li>Carga de datos masivo.</li>
+            </ul>
+                        
+        </div>
+
+        <div class="barra_divisora mt-5" style="min-height:1px; background-color:#0C192C"></div>
 
 
-    
+        <div class="pt-4 mb-5">
+
+            <h4 class="fs-4 ">Administrativo | Centro Medico</h4>
+            <h5 style="font-size:1.2rem;">Octubre 2022 - Febrero 2023.</h5>
+            <h5 style="font-size:1rem;">Centro de fonoaudiología.</h5>
+            <p style="font-size:0.9rem;">Sistema de gestion: EMPRENET</p>
+            <p style="font-size:0.9rem;">Tareas realizadas:</p>
+
+            <ul>
+                <li>Auditoria.</li>
+                <li>Facturacion</li>
+                <li>Liquidacion de sueldos.</li>
+            </ul>
+
+        </div>
+
+        <div class="barra_divisora mt-5" style="min-height:1px; background-color:#0C192C"></div>
+
+
+        <div class="pt-4 mb-5">
+
+            <h4 class="fs-4 ">Administrativo | Union Personal - Accord Salud</h4>
+            <h5 style="font-size:1.2rem;">Noviembre 2021 - Septiembre 2022.</h5>
+            <h5 style="font-size:1rem;">Obra social.</h5>
+            <p style="font-size:0.9rem;">Sistema de gestion: HMS, CISCO</p>
+            <p style="font-size:0.9rem;">Tareas realizadas:</p>
+
+            <ul>
+                <li>Administrativo</li>
+                <li>Altas de prestadores</li>
+                <li>Atencion al afiliado</li>
+            </ul>
+
+        </div>
+        
+      
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!--ACA REALIZA EL DESPLIEGUE SUAVE DE LA BARRA DE NAVEGACION-->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.nav-link').forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                var targetSectionId = this.getAttribute('data-section');
+                var targetSection = document.getElementById(targetSectionId);
+
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+</script>
 
