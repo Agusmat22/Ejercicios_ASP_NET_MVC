@@ -13,65 +13,79 @@
 <partial name="_Proyectos" model=@Model/>
 
 
-<div class="presentacion pb-5" id="presentacion" style="background:#EDEDED;">
-    <div class="container presentacion2">
+<partial name="_ExperienciaLaboral" />
 
-        <h3 class=" fw-bold fs-2 text-center mb-5" style="color:#0C192C; padding-top:5rem;">Experiencia laboral</h3>
 
-        <div class="pt-4 mb-5">
+<div class="presentacion pb-5" id="contacto" style="background:#EDEDED;">
+    <div class="presentacion2 contenedor_contacto">
+
+        <h3 class=" fw-bold fs-2 text-center mb-5" style="color:#0C192C; padding-top:3rem;">Contacto</h3>
+
+        <div class="row row-col-12 row-cols-sm-1  row-cols-md-1 row-cols-lg-1 row-cols-xl-2 justify-content-between ms-md-5 me-md-5">
+
             
-            <h4 class="fs-4 ">Facturacion | Grupo Roisa - Doctored</h4>
-            <h5 style="font-size:1.2rem;">Marzo 2023 - Actual.</h5>
-            <h5 style="font-size:1rem;">Prepaga de salud.</h5>
-            <p style="font-size:0.9rem;">Sistema de gestion: PRESMED</p>
-            <p style="font-size:0.9rem;">Tareas realizadas:</p>
 
-            <ul>
-                <li>Facturacion.</li>
-                <li>Carga de datos masivo.</li>
-            </ul>
-                        
+            <div class="col col_contacto mt-5">
+                <form asp-controller="Home" asp-action="">
+
+                    <div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Nombre</label>
+                            <input class="form-control" id="nombre" name="nombre" type="text" placeholder="Ingrese su nombre" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input class="form-control" id="email" name="email" type="email" placeholder="Ingrese su correo electronico" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="mensaje" name="mensaje" type="textarea" placeholder="Escriba su mensaje" rows="4"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary p-2">Enviar</button>
+
+                    </div>
+
+
+                </form>
+
+
+            </div>
+
+
+            <div class="col col_contacto mt-5 ps-xl-5">
+                <div class="row  align-content-center">
+
+                    <div class="col-2 text-end" >
+                        <img class="img-fluid " src="~/imagenes/gmail.png" alt="foto_gmail" style="max-width:3rem;" />
+                    </div>
+                    <div class="col-9 mb-5">
+                        <h4 class="fs-5 mt-2 text-start">agusgarcia569@gmail.com</h4>
+                    </div>
+
+                    <div class="col-2 text-end" >
+                        <img class="img-fluid" src="~/imagenes/wsp.png" alt="foto_gmail" style="max-width:3rem;" />
+                    </div>
+                    <div class="col-9 mb-5">
+                        <h4 class="fs-5 mt-3 text-start">1163005095</h4>
+                    </div>
+
+                    <div class="col-12 text-center boton_cv" >
+                        <a class="btn btn-primary p-2 me-5" href="~/archivos/CV.pdf" download="CV.pdf" style="width:20rem; background-color:#0C192C">Descargar CV</a>
+
+                    </div>
+
+                </div>
+            </div>
+
         </div>
 
-        <div class="barra_divisora mt-5" style="min-height:1px; background-color:#0C192C"></div>
-
-
-        <div class="pt-4 mb-5">
-
-            <h4 class="fs-4 ">Administrativo | Centro Medico</h4>
-            <h5 style="font-size:1.2rem;">Octubre 2022 - Febrero 2023.</h5>
-            <h5 style="font-size:1rem;">Centro de fonoaudiología.</h5>
-            <p style="font-size:0.9rem;">Sistema de gestion: EMPRENET</p>
-            <p style="font-size:0.9rem;">Tareas realizadas:</p>
-
-            <ul>
-                <li>Auditoria.</li>
-                <li>Facturacion</li>
-                <li>Liquidacion de sueldos.</li>
-            </ul>
-
-        </div>
-
-        <div class="barra_divisora mt-5" style="min-height:1px; background-color:#0C192C"></div>
-
-
-        <div class="pt-4 mb-5">
-
-            <h4 class="fs-4 ">Administrativo | Union Personal - Accord Salud</h4>
-            <h5 style="font-size:1.2rem;">Noviembre 2021 - Septiembre 2022.</h5>
-            <h5 style="font-size:1rem;">Obra social.</h5>
-            <p style="font-size:0.9rem;">Sistema de gestion: HMS, CISCO</p>
-            <p style="font-size:0.9rem;">Tareas realizadas:</p>
-
-            <ul>
-                <li>Administrativo</li>
-                <li>Altas de prestadores</li>
-                <li>Atencion al afiliado</li>
-            </ul>
-
-        </div>
         
-      
+
+
     </div>
 </div>
 

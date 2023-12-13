@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\usuario\\Desktop\\Ejercicios_ASP_NET_MVC\\Proyectos\\WebIntentoPresentacion\\WebIntentoPresentacion\\WebIntentoPresentacion.csproj": {}
+    "C:\\Users\\Lisandro\\Desktop\\Ejercicios_ASP_NET_MVC\\Proyectos\\WebIntentoPresentacion\\WebIntentoPresentacion\\WebIntentoPresentacion.csproj": {}
   },
   "projects": {
-    "C:\\Users\\usuario\\Desktop\\Ejercicios_ASP_NET_MVC\\Proyectos\\WebIntentoPresentacion\\WebIntentoPresentacion\\WebIntentoPresentacion.csproj": {
+    "C:\\Users\\Lisandro\\Desktop\\Ejercicios_ASP_NET_MVC\\Proyectos\\WebIntentoPresentacion\\WebIntentoPresentacion\\WebIntentoPresentacion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\usuario\\Desktop\\Ejercicios_ASP_NET_MVC\\Proyectos\\WebIntentoPresentacion\\WebIntentoPresentacion\\WebIntentoPresentacion.csproj",
+        "projectUniqueName": "C:\\Users\\Lisandro\\Desktop\\Ejercicios_ASP_NET_MVC\\Proyectos\\WebIntentoPresentacion\\WebIntentoPresentacion\\WebIntentoPresentacion.csproj",
         "projectName": "WebIntentoPresentacion",
-        "projectPath": "C:\\Users\\usuario\\Desktop\\Ejercicios_ASP_NET_MVC\\Proyectos\\WebIntentoPresentacion\\WebIntentoPresentacion\\WebIntentoPresentacion.csproj",
-        "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\usuario\\Desktop\\Ejercicios_ASP_NET_MVC\\Proyectos\\WebIntentoPresentacion\\WebIntentoPresentacion\\obj\\",
+        "projectPath": "C:\\Users\\Lisandro\\Desktop\\Ejercicios_ASP_NET_MVC\\Proyectos\\WebIntentoPresentacion\\WebIntentoPresentacion\\WebIntentoPresentacion.csproj",
+        "packagesPath": "C:\\Users\\Lisandro\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lisandro\\Desktop\\Ejercicios_ASP_NET_MVC\\Proyectos\\WebIntentoPresentacion\\WebIntentoPresentacion\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lisandro\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
